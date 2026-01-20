@@ -47,5 +47,4 @@ Dependencia pra .docx:
   
   boa noite, boa sorte,
   DrLegato
-  DrLegato
-"""
+  
