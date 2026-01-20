@@ -64,7 +64,7 @@ print ("checadordeinventario3000 \n\n feito por DrLegato \n\n")
 def ler_linhas_txt(path: Path) -> List[str]:
     # manter as linhas originais, limpar whitespace e newline
     text = path.read_text(encoding="utf-8", errors="replace")
-    return [line.rstrip("\n\r") for line in text.splitlinhas()]
+    return [line.rstrip("\n\r") for line in text.splitlines()]
 
 def ler_linhas_docx(path: Path) -> List[str]:
     try:
@@ -199,10 +199,10 @@ def print_sumario(
     if not dupli_valid:
         print("None.")
     else:
-        for tok, c in dup_valid[:50]:
+        for tok, c in dupli_valid[:50]:
             print(f"[x{c}] {tok}")
         if len(dupli_valid) > 50:
-            print(f"... plus {len(dup_valid) - 50} more")
+            print(f"... plus {len(dupli_valid) - 50} more")
 
     # malformado
     print("\n=== malformado tokens (first 50) ===")
@@ -233,7 +233,7 @@ def print_sumario(
         if len(groups) > 30:
             print(f"... plus {len(groups) - 30} more groups")
 
-def escrever_csv_reports(prefix: str,
+def write_csv_reports(prefix: str,
                       exato_duplis: List[Tuple[str, int]],
                       malformado: List[Tuple[int, str, str, str]],
                       valido_counts: Counter):
@@ -252,12 +252,12 @@ def escrever_csv_reports(prefix: str,
             w.writerow(row)
 
     # valid duplicates
-    dup_valid = [(tok, c) for tok, c in valido_counts.items() if c > 1]
-    dup_valid.sort(key=lambda x: (-x[1], x[0]))
+    dupli_valid = [(tok, c) for tok, c in valido_counts.items() if c > 1]
+    dupli_valid.sort(key=lambda x: (-x[1], x[0]))
     with open(f"{prefix}_duplicados_valid_ids.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["id", "count"])
-        for tok, c in dup_valid:
+        for tok, c in dupli_valid:
             w.writerow([tok, c])
 
 # ---------- Principal ----------
@@ -294,3 +294,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
