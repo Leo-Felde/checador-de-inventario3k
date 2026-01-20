@@ -19,10 +19,10 @@ Escaneia arquivo indicado procurando:
 - quase-duplicados (mesmos digitos apos normalização)
 
 o que precisa pra rodar esta desgraça?
-python
-algo um pouco mais potente que o ENIAC
-a habilidade de ler
-um arquivo pra checar (se for .docx, leia abaixo o que fazer)
+- python
+- algo um pouco mais potente que o ENIAC
+- a habilidade de ler
+- um arquivo pra checar (se for .docx, leia abaixo o que fazer)
 
 Essa merda suporta:
 - .txt / .csv / .tsv / plain text no geral
