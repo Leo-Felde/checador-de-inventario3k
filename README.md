@@ -40,7 +40,7 @@ Essa merda suporta:
 
 Como usar essa caralha:
 - python checadordeinventario3k.py path/to/file.docx
-- python checadordeinventario3k.py path/to/file.txt --expected-length 9 (comprimento que tu quiser)
+- python checadordeinventario3k.py path/to/file.txt --comprimento_esperado 9 (comprimento que tu quiser)
 - python checadordeinventario3k.py path/to/file.txt --csv-out report_prefix
 
 Dependencia pra .docx:
@@ -56,8 +56,12 @@ Dependencia pra .docx:
   - parceiro, eu sou um bibliotecário que tem dois certificados de programação, um é com python e o outro é ruby. se tu quer tanto mudar a linguagem usada, fique à vontade.
   
   - forte abraço, tomara que nada exploda
+- 'hotel?'
+- trivago.
 
-
+  escrever isso tudo foi muito terapêutico.
   boa noite, boa sorte,
+
+  
   DrLegato
   
