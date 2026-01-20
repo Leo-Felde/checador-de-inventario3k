@@ -1,9 +1,11 @@
 # checador-de-inventario3k
 
   Feito com muito ódio por DrLegato com notepad++ porque o TI (Arcontes do Demiurgo) não me deixa usar o VStudio sem ter que passar por 15 anos de burocracia
+ 
   
+  nem FUDENDO que eu vou checar 69 páginas de código de exemplar pra ver se ter duplicatas
   
- eu fiz essa merda inteira em uma hora e meia com auxílio de 2 latas de redbull e 1 camel amarelo
+ então eu fiz essa merda inteira em uma hora e meia com auxílio de 2 latas de redbull e 1 camel amarelo
  
  
  não houve qualquer tipo de teste depois de feito e eu ver que funciona na minha máquina
