@@ -61,12 +61,12 @@ from typing import Iterable, List, Tuple
 
 print ("checadordeinventario3000 \n\n feito por DrLegato \n\n")
 
-def ler_de_txt(path: Path) -> List[str]:
-    # Keeps the original linhas, stripped of trailing newline
+def ler_linhas_txt(path: Path) -> List[str]:
+    # manter as linhas originais, limpar whitespace e newline
     text = path.read_text(encoding="utf-8", errors="replace")
     return [line.rstrip("\n\r") for line in text.splitlinhas()]
 
-def ler_de_docx(path: Path) -> List[str]:
+def ler_linhas_docx(path: Path) -> List[str]:
     try:
         from docx import Document
     except ImportError as e:
@@ -86,9 +86,9 @@ def ler_de_docx(path: Path) -> List[str]:
 def ler_linhas(path: Path) -> List[str]:
     suffix = path.suffix.lower()
     if suffix == ".docx":
-        return ler_linhas_from_docx(path)
+        return ler_linhas_docx(path)
     else:
-        return ler_linhas_from_txt(path)
+        return ler_linhas_txt(path)
 
 # ---------- regras de ID ----------
 
@@ -164,8 +164,8 @@ def scan_tokens(
         if not raw.strip():
             continue
 #se essa porra nao funcionar eu irei enfiar 5 metros de arame farmado na minha uretra
-        for tok in find_candidate_tokens(raw):
-            ok, reason = classify_token(tok.strip(), expected_len)
+        for tok in achar_candidatos_tokens(raw):
+            ok, reason = classificar_token(tok.strip(), expected_len)
             if ok:
                 valido_counts[tok] += 1
                 near[normalize_digits(tok)].append((idx, tok))
@@ -264,29 +264,29 @@ def escrever_csv_reports(prefix: str,
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("diretorio", help="diretorio do arquivo (.txt/.csv/.docx suportado)")
-    ap.add_argument("--comprimento-esperado", type=int, default=9,
+    ap.add_argument("path", help="path do arquivo (.txt/.csv/.docx suportado)")
+    ap.add_argument("--comprimento_esperado", type=int, default=9,
                     help="Comprimento do ID esperado (digitos). Default: 9")
     ap.add_argument("--csv-out", default=None,
                     help="Se setado, escreve um relatório CSV usando esse prefixo")
     args = ap.parse_args()
 
-    path = Diretorio(args.path)
-    if not diretorio.exists():
+    path = Path(args.path)
+    if not path.exists():
         raise SystemExit(f"404 diretório não encontrado em: {path}")
 
     linhas = ler_linhas(path)
 
-    exato_duplis = reportar_duplices_exatos(linhas)
-    malformado, valido_counts, near = scan_tokens(linhas, expected_len=args.expected_length)
+    exato_duplis = report_duplicados_exatos(linhas)
+    malformado, valido_counts, near = scan_tokens(linhas, expected_len=args.comprimento_esperado)
 
     print(f"Scanned: {path}")
     print(f"total de linhas não vazias: {sum(1 for l in linhas if l.strip())}")
-    print(f"Total de tokens detectados: {sum(len(find_candidate_tokens(l)) for l in linhas if l.strip())}")
+    print(f"Total de tokens detectados: {sum(len(achar_candidatos_tokens(l)) for l in linhas if l.strip())}")
     print(f"IDs válidos encontrados: {sum(valido_counts.values())} (unique: {len(valido_counts)})")
     print(f"tokens malformados encontrados: {len(malformado)}")
 
-    print_summary(exato_duplis, malformado, valido_counts, near)
+    print_sumario(exato_duplis, malformado, valido_counts, near)
 
     if args.csv_out:
         write_csv_reports(args.csv_out, exato_duplis, malformado, valido_counts)
