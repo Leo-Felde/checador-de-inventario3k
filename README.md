@@ -30,9 +30,9 @@ Essa merda suporta:
 - o resto tá na mão de Deus, Odin, Rah, Sophia, Shiva, que seja.
 
 Como usar essa caralha:
-  python checadordeinventario3k.py path/to/file.docx
-  python checadordeinventario3k.py path/to/file.txt --expected-length 9
-  python checadordeinventario3k.py path/to/file.txt --csv-out report_prefix
+- python checadordeinventario3k.py path/to/file.docx
+- python checadordeinventario3k.py path/to/file.txt --expected-length 9 (comprimento que tu quiser)
+- python checadordeinventario3k.py path/to/file.txt --csv-out report_prefix
 
 Dependencia pra .docx:
   pip install python-docx
