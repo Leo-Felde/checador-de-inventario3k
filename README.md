@@ -1,5 +1,5 @@
 # checador-de-inventario3k
-"""
+
   Feito com muito ódio por DrLegato com notepad++ porque o TI (Arcontes do Demiurgo) não me deixa usar o VStudio sem ter que passar por 15 anos de burocracia
   
   
@@ -9,18 +9,20 @@
  
  
  eu não garanto nada, honestamente.
- 
- vvvvvvvvvvvvvvvvvvvvvvvvv
-
 
 checadordeinventario3k.py
 
 O que essa porra faz?
-
-Escaneia arquivo procurando:
+Escaneia arquivo indicado procurando:
 - linhas duplicadas (string exata duas vezes)
 - IDs disformes (baseado em regras que tu definir)
 - quase-duplicados (mesmos digitos apos normalização)
+
+o que precisa pra rodar esta desgraça?
+python
+algo um pouco mais potente que o ENIAC
+a habilidade de ler
+um arquivo pra checar (se for .docx, leia abaixo o que fazer)
 
 Essa merda suporta:
 - .txt / .csv / .tsv / plain text no geral
@@ -44,6 +46,6 @@ Dependencia pra .docx:
   forte abraço, tomara que nada exploda
   
   boa noite, boa sorte,
-  
+  DrLegato
   DrLegato
 """
