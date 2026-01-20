@@ -4,11 +4,18 @@
   
   
  eu fiz essa merda inteira em uma hora e meia com auxílio de 2 latas de redbull e 1 camel amarelo
- não houve qualquer tipo de teste depois de feito
- ele funcionou pra mim, pode ser que ele reverta a entropia local de onde você rodar
  
  
- eu não garanto nada, honestamente.
+ não houve qualquer tipo de teste depois de feito e eu ver que funciona na minha máquina
+ 
+ pode ser que ele reverta a entropia local de onde você rodar 
+ 
+
+ esse programa foi feito pra uso pessoal, não garanto NEM O MÍNIMO ESPERADO
+
+ só tá no github por fins de arquivo.
+
+enfim: 
 
 checadordeinventario3k.py
 
@@ -39,12 +46,16 @@ Dependencia pra .docx:
   
   
   
-  'ain mas seu codigo ta muito sujo'
-  ta funcionando entao nao mexe
-  'ain mas pra que usar python? usa [insira linguagem aqui]'
-  parceiro, eu sou um bibliotecário que tem dois certificados de programação, um é com python e o outro é ruby. se tu quer tanto mudar a linguagem usada, fique à vontade.
-  forte abraço, tomara que nada exploda
+ F.A.Q:
+ 
+ - 'ain mas seu codigo ta muito sujo'
+  - ta funcionando entao nao mexe
+  - 'ain mas pra que usar python? usa [insira linguagem aqui]'
+  - parceiro, eu sou um bibliotecário que tem dois certificados de programação, um é com python e o outro é ruby. se tu quer tanto mudar a linguagem usada, fique à vontade.
   
+  - forte abraço, tomara que nada exploda
+
+
   boa noite, boa sorte,
   DrLegato
   
